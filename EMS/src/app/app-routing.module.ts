@@ -10,7 +10,7 @@ import { SignInComponent } from './sign-in/sign-in.component';
 const routes: Routes = [
   {path:"", redirectTo:"register",pathMatch:"full"},
   {path:"register", component:RegistrationComponent},
-  {path:"sigin", component:SignInComponent},
+  {path:"signin", component:SignInComponent},
   {path:"add",component:AddComponent},
   {path:"edit",component:EditComponent},
   {path:"ems", component:EMSComponent},

@@ -15,6 +15,7 @@ export class AddComponent implements OnInit {
 
   submit(form:NgForm){
     console.log(form.value)
+
   }
 
 }
