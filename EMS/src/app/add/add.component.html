@@ -1,40 +1,32 @@
-
+<div class="container mt-5">
     <div class="card bg-light mb-3" style="max-width: 30rem;">
         <div class="card-header"><b>Add Employee</b> </div>
         <div class="card-body">
             <div>
-                <form #addForm="ngForm" (ngSubmit)="submit(addForm)">
+                <form [formGroup]="empdata" (ngSubmit)="postData()">
                     <div class="form-group">
-                        <label>Full Name</label>
-                        <input type="Text" #fname="ngModel" name="fname" required minlength="3"
-                            pattern="[a-zA-Z][a-zA-Z ]+" class="form-control" ngModel>
-                        <small style="color: tomato;" *ngIf="fname.invalid && fname.touched">*Enter Valid Name</small>
+                        <label for="empname">Full Name</label>
+                        <input type="text" class="form-control" formControlName="empname" name="empname">
+                        <span style="color: red;" *ngIf="empname?.invalid && empname?.touched">! Please enter a valid name</span>
                     </div>
                     <div class="form-group">
-                        <label>Designation</label>
-                        <input type="text" #designation="ngModel" name="designation" required minlength="3"
-                            pattern="[a-zA-Z][a-zA-Z ]+" class="form-control" ngModel>
-                        <small style="color: tomato;" *ngIf="designation.invalid && designation.touched">*Enter Valid
-                            Designation</small>
+                        <label for="desig">Designation</label>
+                        <input type="text" class="form-control" formControlName="empdesig" name="empdesig">
+                        <span style="color: red;" *ngIf="empdesig?.invalid && empdesig?.touched">! Please enter a valid Designation</span>
                     </div>
                     <div class="form-group">
-                        <label>Salary</label>
-                        <input type="number" #salary="ngModel" name="salary" required minlength="4" maxlength="6"
-                            pattern="^(?=[0-9]{4,6}$)0*[1-9][0-9]{3,}$" class="form-control" ngModel>
-                        <small style="color: tomato;" *ngIf="salary.invalid && salary.touched">*Enter valid
-                            Salary</small>
+                        <label for="name">Salary</label>
+                        <input type="number" class="form-control" formControlName="empsal" name="empsal">
+                        <span style="color: red;" *ngIf="empsal?.invalid && empsal?.touched">! Please enter a valid Salary</span>
                     </div>
                     <div class="form-group">
-                        <label>Age</label>
-                        <input type="number" #age="ngModel" name="age" class="form-control" required minlength="2"
-                            pattern="^(1[89]|[2-9]\d)$" ngModel>
-                        <small style="color: tomato;" *ngIf="age.invalid && age.touched">*Enter valid age (should be
-                            more
-                            than 18yrs)</small>
+                        <label for="name">Age</label>
+                        <input type="number" class="form-control" formControlName="empage" name="empage">
+                        <span style="color: red;" *ngIf="empage?.invalid && empage?.touched">! Please enter a valid age</span>
                     </div>
-                    <button style="margin-right:30px ;" type="submit" class="btn btn-primary"
-                        [disabled]="addForm.invalid">Submit</button>
+                    <button type="submit" class="btn btn-primary float-right" [disabled]="empdata?.invalid">Submitt</button>
                 </form>
             </div>
         </div>
     </div>
+</div>
