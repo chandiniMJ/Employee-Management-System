@@ -1,86 +1,50 @@
-<!-- <div class="bg-primary">
-    <div class="container h-25">
-        <div class="row">
-            <div class="col-md-5 m-auto">
-                <h4 class="ml-4 text-white">Registaion Form</h4>
-                <div class="card mh-50">
-                    <div class="card-body bg-white">
-                        <div class="form-group">
-                            <label for="exampleInputEmail1">Name</label>
-                            <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
-                          </div>
-                          <div class="form-group">
-                            <label for="exampleInputEmail1">Username</label>
-                            <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
-                          </div>
-                          <div class="form-group">
-                            <label for="exampleInputEmail1">Email address</label>
-                            <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
-                          </div>
-                          <div class="form-group">
-                            <label for="exampleInputEmail1">Password</label>
-                            <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
-                          </div>
-                          <div class="form-group">
-                            <label for="exampleInputEmail1">Confirm Password</label>
-                            <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
-                          </div>
-                          <button type="button" class="btn btn-primary btn-lg btn-block">Block level button</button>
-
-                          <p class="ml-5 mt-2">Already have an account? <a href="">Sign in.</a></p>
-    
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</div> -->
-
 <div class="bg-primary">
-    <div class="container h-25">
-      <div class="row">
-        <div class="col-md-4 m-auto">
-          <h6 class="ml-5 p-2 text-white">Registaion your account</h6>
-          <div class="card mh-50">
-            <div class="card-body bg-white">
-              <form #Signform="ngForm" (submit)="signin(Signform)">
-                <div class="form-group">
-                  <input #ename="ngModel" type="text" required minlength="5" maxlength="8" placeholder="Name"
-                    class="form-control" name="ename" id="exampleInputEmail1" aria-describedby="emailHelp" ngModel>
-                  <span style="color: red;" *ngIf="ename.invalid && ename.touched">Enter a valid Name</span>
-                </div>
-                <div class="form-group">
-                  <input #uname="ngModel" name="uname" type="text" required minlength="8" maxlength="20" 
-                    placeholder="Username" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"
-                    ngModel>
-                  <span style="color: red;" *ngIf="uname.invalid && uname.touched">Enter your Full Name </span>
-                </div>
-                <div class="form-group">
-                  <input #email="ngModel" name="email" type="email" required pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" placeholder="Email address" class="form-control"
-                    id="exampleInputEmail1" aria-describedby="emailHelp" ngModel>
-                  <span style="color: red;" *ngIf="email.invalid && email.touched">Enter a valid Email</span>
-                </div>
-                <div class="form-group">
-                  <input #pass="ngModel" name="pass" type="password" required minlength="5" maxlength="10" placeholder="Password" class="form-control" id="exampleInputEmail1"
-                    aria-describedby="emailHelp" ngModel>
-                  <span style="color: red;" *ngIf="pass.invalid && pass.touched"> Enter a valid Password</span>
-                </div>
-                <div class="form-group">
-                  <input #cpass="ngModel" name="cpass" required minlength="5" maxlength="10" type="password" placeholder="Confirm Password"  class="form-control" id="exampleInputEmail1"
-                    aria-describedby="emailHelp" ngModel>
-                  <span style="color: red;" *ngIf="cpass.invalid && cpass.touched">Enter a valid Password</span>
-  
-                </div>
-                <button type="submit" class="btn btn-success btn-md btn-block">Sign up</button>
-  
-                <p class="ml-5 mt-2">Already have an account? <a href="">Sign in.</a></p>
-              </form>
-  
-            </div>
+  <div class="container h-25">
+    <div class="row">
+      <div class="col-md-4 m-auto">
+        <h6 class="ml-5 p-2 text-white">Registaion your account</h6>
+        <div class="card mh-50">
+          <div class="card-body bg-white">
+            <form #Signform="ngForm" (submit)="signin(Signform)">
+              <div class="form-group">
+                <input #ename="ngModel" type="text" required minlength="5" maxlength="8" placeholder="Name"
+                  class="form-control" name="ename" id="exampleInputEmail1" aria-describedby="emailHelp" ngModel>
+                <span style="color: red;" *ngIf="ename.invalid && ename.touched">Enter a valid Name</span>
+              </div>
+              <div class="form-group">
+                <input #uname="ngModel" name="uname" type="text" required minlength="8" maxlength="20"
+                  placeholder="Username" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"
+                  ngModel>
+                <span style="color: red;" *ngIf="uname.invalid && uname.touched">Enter your Full Name </span>
+              </div>
+              <div class="form-group">
+                <input #email="ngModel" name="email" type="email" required
+                  pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" placeholder="Email address" class="form-control"
+                  id="exampleInputEmail1" aria-describedby="emailHelp" ngModel>
+                <span style="color: red;" *ngIf="email.invalid && email.touched">Enter a valid Email</span>
+              </div>
+              <div class="form-group">
+                <input #pass="ngModel" name="pass" type="password" required minlength="5" maxlength="10"
+                  placeholder="Password" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"
+                  ngModel>
+                <span style="color: red;" *ngIf="pass.invalid && pass.touched"> Enter a valid Password</span>
+              </div>
+              <div class="form-group">
+                <input #cpass="ngModel" name="cpass" required minlength="5" maxlength="10" type="password"
+                  placeholder="Confirm Password" class="form-control" id="exampleInputEmail1"
+                  aria-describedby="emailHelp" ngModel>
+                <span style="color: red;" *ngIf="cpass.invalid && cpass.touched">Enter a valid Password</span>
+
+              </div>
+              <button type="submit" class="btn btn-success btn-md btn-block">Sign up</button>
+
+              <p class="ml-5 mt-2">Already have an account? <a href="">Sign in.</a></p>
+            </form>
+
           </div>
         </div>
       </div>
     </div>
-    <br><br><br><br><br><br><br><br>
   </div>
-  
+  <br><br><br><br><br><br><br><br>
+</div>

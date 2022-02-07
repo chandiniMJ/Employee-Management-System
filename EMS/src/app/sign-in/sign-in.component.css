@@ -1,0 +1,56 @@
+#background{
+    background-color:#3b5998;
+    margin-top: 0px;
+}
+.container1{
+    height: 550px;
+    width: 500px;
+    background-color:#3b5998;
+    margin-left: auto;
+    margin-right: auto;
+}
+.container{
+    height: 300px;
+    width: 300px ;
+    align-items: center;
+    background-color: white;
+    margin-top: 0%;
+    margin-top: 30px;
+    box-sizing: border-box;
+    
+}
+
+.container2{
+    
+    background-color: white;
+    width: 300px;
+    height: 60px;
+    text-align: center;
+    align-content: center;
+    align-items: center;
+    padding-top: 15px;
+    
+}
+
+h4{
+    text-align: center;
+    margin-top: 40px;
+    color: white;
+    font-family:'Times New Roman', Times, serif;
+    padding-top: 25px;
+    font-size: 25px;
+}
+
+form{
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: bottom;
+    
+    
+}
+button{
+    width: 270px;
+}
+.emailadd{
+    margin-top: 20px;
+}
