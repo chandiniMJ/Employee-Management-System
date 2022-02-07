@@ -1,12 +1,10 @@
-<div id="background">
 <div class="container1 mh-50">
     <form [formGroup]="Signinform" (ngSubmit)="SigninData()">
         <h4>Sign in to your account</h4>
         <div class="container">
             <div class="form-group">
                 <label class="emailadd" for="exampleInputEmail1">Email address</label>
-                <input type="email" name="umail" class="form-control" placeholder="Enter your email address..."
-                    formControlName="umail">
+                <input type="email" name="umail" class="form-control" placeholder="Enter your email address..." formControlName="umail">
                 <span style="color: red;" *ngIf="umail.invalid && umail.touched"> Enter valid Email Id...</span>
             </div>
             <div class="form-group mt-3">
@@ -14,8 +12,7 @@
                         password?</a></label>
             </div>
             <div class="form-group">
-                <input type="password" name="upass" class="form-control" placeholder="Enter your password..."
-                    formControlName="upass">
+                <input type="password" name="upass" class="form-control" placeholder="Enter your password..." formControlName="upass">
                 <span style="color: red;" *ngIf="upass.invalid && upass.touched"> Enter valid Password...</span>
             </div>
 
@@ -30,6 +27,4 @@
             </div>
         </div>
     </form>
-
-</div>
 </div>

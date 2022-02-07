@@ -22,8 +22,16 @@ export class SignInComponent implements OnInit {
   get upass(){
     return this.Signinform.get("upass")
   }
+
    SigninData(){
+    localStorage.setItem('logemail',this.Signinform.value.umail)
+    localStorage.setItem('logpass',this.Signinform.value.upass)
+
+    if (localStorage.getItem('regemail')==localStorage.getItem('logemail') && localStorage.getItem('regpass')==localStorage.getItem('logpass') ){
+      alert('Login Sucess')
+    }else{
+      alert('Invalid Login Credientials')
+    }
     console.log(this.Signinform.value)
   }
-
 }
