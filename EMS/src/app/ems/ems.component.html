@@ -1,5 +1,4 @@
-<br>
-<div class="container">
+<div class="mt-3" id="table">
     <table class="table table-bordered table-dark">
         <thead>
             <tr>
@@ -12,14 +11,57 @@
             </tr>
         </thead>
         <tbody>
-            <tr>
-                <td>test</td>
-                <td>20</td>
-                <td>qwerty</td>
-                <td>12345</td>
-                <td><button type="button" class="btn btn-warning">Edit</button></td>
-                <td><button type="button" class="btn btn-danger">Delete</button></td>
+            <tr *ngFor="let data of employeedata;index as id">
+                <td>{{data.empname}}</td>
+                <td>{{data.empage}}</td>
+                <td>{{data.empdesig}}</td>
+                <td>{{data.empsal}}</td>
+                <td><button type="button" class="btn btn-warning" data-toggle="modal" data-target="#exampleModal" (click)="onEdit(data)">Edit</button></td>
+                <td><button type="button" class="btn btn-primary" (click)="deleteEmployee(data)">Delete</button></td>
             </tr>
         </tbody>
     </table>
+</div>
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Edit Employee</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+      </button>
+            </div>
+            <div class="modal-body">
+                <form [formGroup]="empdata">
+                    <div class="form-group">
+                        <label for="empname">Full Name</label>
+                        <input type="text" class="form-control" formControlName="empname" name="empname">
+                        <span style="color: red;" *ngIf="empname?.invalid && empname?.touched">! Please enter a valid name</span>
+                    </div>
+                    <div class="form-group">
+                        <label for="desig">Designation</label>
+                        <input type="text" class="form-control" formControlName="empdesig" name="empdesig">
+                        <span style="color: red;" *ngIf="empdesig?.invalid && empdesig?.touched">! Please enter a valid Designation</span>
+                    </div>
+                    <div class="form-group">
+                        <label for="name">Salary</label>
+                        <input type="number" class="form-control" formControlName="empsal" name="empsal">
+                        <span style="color: red;" *ngIf="empsal?.invalid && empsal?.touched">! Please enter a valid Salary</span>
+                    </div>
+                    <div class="form-group">
+                        <label for="name">Age</label>
+                        <input type="number" class="form-control" formControlName="empage" name="empage">
+                        <span style="color: red;" *ngIf="empage?.invalid && empage?.touched">! Please enter a valid age</span>
+                    </div>
+                    <!-- <button type="submit" class="btn btn-primary float-right" [disabled]="empdata?.invalid">Edit</button> -->
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" btnSaveShow class="btn btn-secondary" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary" (click)="updateEmployeeData()">Save changes</button>
+            </div>
+        </div>
+    </div>
 </div>
