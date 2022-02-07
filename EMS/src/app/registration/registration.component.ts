@@ -16,13 +16,12 @@ export class RegistrationComponent implements OnInit {
 
     localStorage.setItem('regpass',reg.value.pass)
     localStorage.setItem('regcpass',reg.value.cpass)
-    if(localStorage.getItem('regpass')==localStorage.getItem('regcpass')){ 
-         console.log(reg.value); 
+    localStorage.setItem('regemail',reg.value.email)
+    if(localStorage.getItem('regpass')==localStorage.getItem('regcpass')){
+        //  console.log(reg.value);
          alert('Registration Successful')
     }else{
       alert('Password Mismatch')
     }
   }
- 
-
 }
