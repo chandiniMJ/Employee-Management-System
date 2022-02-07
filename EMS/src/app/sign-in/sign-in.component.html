@@ -1,1 +1,33 @@
-<p>sign-in works!</p>
+<div class="container1">
+    <form [formGroup]="Signinform" (ngSubmit)="SigninData()">
+        <h4>Sign in to your account</h4>
+        <div class="container">
+            <div class="form-group">
+                <label class="emailadd" for="exampleInputEmail1">Email address</label>
+                <input type="email" name="umail" class="form-control" placeholder="Enter your email address..."
+                    formControlName="umail">
+                <span style="color: red;" *ngIf="umail.invalid && umail.touched"> Enter valid Email Id...</span>
+            </div>
+            <div class="form-group mt-3">
+                <label for="exampleInputPassword1">Password <a href="" style="margin-left: 30px;">Forgot
+                        password?</a></label>
+            </div>
+            <div class="form-group">
+                <input type="password" name="upass" class="form-control" placeholder="Enter your password..."
+                    formControlName="upass">
+                <span style="color: red;" *ngIf="upass.invalid && upass.touched"> Enter valid Password...</span>
+            </div>
+
+            <div class="box3">
+                <button type="submit" class="btn btn-success mt-3">Sign in</button>
+
+            </div>
+            <br>
+            <br>
+            <div class="container2 mt-5 w-100" style="align-items: center;">
+                <label for="">New user?</label><a href="">Create an account.</a>
+            </div>
+        </div>
+    </form>
+
+</div>
