@@ -1,0 +1,15 @@
+{
+  "posts": [
+    {
+      "id": 1,
+      "empname": "Charan Teja",
+      "empdesig": "Developer",
+      "empsal": 50000,
+      "empage": 25
+    }
+  ],
+  "comments": [],
+  "profile": {
+    "name": "typicode"
+  }
+}
